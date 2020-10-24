@@ -27,12 +27,14 @@ RUN set -eux; \
 	    icu-dev \
 	    libzip-dev \
 	    zlib-dev \
+	    libxslt-dev \
 	; \
 	\
 	docker-php-ext-configure zip; \
 	docker-php-ext-install -j$(nproc) \
 	    intl \
 	    zip \
+	    xsl \
 	; \
 	pecl install \
 	    apcu-${APCU_VERSION} \
